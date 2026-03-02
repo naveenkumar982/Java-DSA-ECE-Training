@@ -9,3 +9,4 @@ public class EncapsulationUsage {
         System.out.println("Id is = " + p1.getId());
     }
 }
+
