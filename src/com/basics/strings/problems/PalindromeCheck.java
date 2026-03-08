@@ -2,16 +2,16 @@ package com.basics.strings.problems;
 
 public class PalindromeCheck {
     public static void main(String[] args) {
-        String str = "madam";
-        String reverse = "";
-        for (int i = str.length() - 1; i >= 0; i--) {
-            reverse += str.charAt(i);
+        String str="madam";
+        String rev="";
+        for (int i = str.length()-1; i >= 0; i--) {
+            rev += str.charAt(i);
         }
-        System.out.println(reverse);
-        if (str.equals(reverse)) {
+        System.out.println(rev);
+        if(str.equals(rev)){
             System.out.println("Palindrome");
-        }else  {
-            System.out.println("Not a Palindrome");
+        }else{
+            System.out.println("not a palindrome");
         }
     }
 }

@@ -1,19 +1,14 @@
 package com.basics.conditionalStatements;
 
-public class IfELseIfElse {
-    static void main(String[] args) {
+public class IfElseIfElse {
+    public static void main(String[] args) {
         int x=0;
-        if(x>0){
-            System.out.println(x + " is positive integer");
+        if(x >0){
+            System.out.println(x+" is a positive integer");
+        }else if(x<0){
+            System.out.println(x+" is a negative integer");
+        }else{
+            System.out.println(x+" is a neither positive nor negative integer");
         }
-        else if(x<0){
-            System.out.println(x + " is negative integer");
-
-        }
-        else{
-            System.out.println( "  The number is zero");
-
-        }
-
     }
 }

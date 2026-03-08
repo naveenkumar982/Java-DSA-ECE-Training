@@ -1,19 +1,23 @@
 package com.basics.patterns;
 
 public class HeartPattern {
-    static void main(String[] args) {
-        for (int r=0; r<6; r++){
-            for (int c=0; c<7; c++){
-                if(r == 0 && c%3 !=0 || r == 1 && c%3 ==0 || r-c ==2 || r + c == 8 ){
+    public static void main(String[] args) {
+        for (int r = 0; r < 6; r++) {
+            for (int c = 0; c < 7; c++) {
+                if(r==0 && c%3 !=0|| c % 3 == 0 && r == 1 ||r-c==2||r+c==8){
                     System.out.print(" * ");
-                }else{
+                } else{
                     System.out.print("   ");
                 }
-                if(r ==2 && c==1){
-                    System.out.print(" KAVANA ");
-                }
-                if(r ==2 && c==2){
+            }
+            System.out.println();
+        }
+        for (int r = 0; r < 6; r++) {
+            for (int c = 0; c < 7; c++) {
+                if(r==5 && c%3 !=0|| c % 3 == 0 && r == 4 ||c-r==3||r+c==3){
                     System.out.print(" * ");
+                } else{
+                    System.out.print("   ");
                 }
             }
             System.out.println();

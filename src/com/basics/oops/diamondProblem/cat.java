@@ -1,25 +1,27 @@
 package com.basics.oops.diamondProblem;
 
-public interface cat {
+public interface Cat {
+
     default void sound(){
-        System.out.println("Meow!");
+        System.out.println("Meow");
     }
 }
 interface Dog{
-    static void sound(){
-        System.out.println("Bow Bow!");
+    default void sound(){
+        System.out.println("bow");
     }
 }
-class Cog implements cat, Dog{
-    public void sound(){
-        //System.out.println("Some new sound!!");
-        cat.super.sound();
-        Dog.sound();
+class Cog implements Cat,Dog{
+    @Override
+    public void sound() {
+        //System.out.println("some new sound");
+        Cat.super.sound();
+        Dog.super.sound();
     }
 }
 class Demo{
     public static void main(String[] args) {
-        Cog cog = new Cog();
+        Cog cog=new Cog();
         cog.sound();
     }
 }
