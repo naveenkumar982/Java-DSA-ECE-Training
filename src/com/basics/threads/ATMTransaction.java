@@ -9,7 +9,7 @@ public class ATMTransaction extends Thread{
         ATMTransaction tx=new ATMTransaction();
         System.out.println("thread state:"+tx.getState());// new state -> object created
         tx.start();
-        System.out.println("thread state:"+tx.getState());// RUNNABLE
+        System.out.println("thread:"+tx.getState());// RUNNABLE
 
     }
 }
