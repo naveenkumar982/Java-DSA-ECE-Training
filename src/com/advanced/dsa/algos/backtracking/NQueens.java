@@ -1,0 +1,55 @@
+package com.advanced.dsa.algos.backtracking;
+
+public class NQueens {
+    static boolean isSafe(char[][] board, int row, int col, int n) {
+        // Check column
+        for (int i = 0; i < row; i++) {
+            if (board[i][col] == 'Q')
+                return false;
+        }
+        // Check left diagonal
+        for (int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--) {
+            if (board[i][j] == 'Q') return false;
+        }
+        // Check right diagonal ✅ j++ fixed
+        for (int i = row - 1, j = col + 1; i >= 0 && j < n; i--, j++) {
+            if (board[i][j] == 'Q') return false;
+        }
+        return true;
+    }
+
+    static void solve(char[][] board, int row, int n) {
+        if (row == n) {
+            printBoard(board, n);
+            System.out.println();
+            return;
+        }
+        for (int col = 0; col < n; col++) {
+            if (isSafe(board, row, col, n)) { // ✅ all 3 lines inside if block
+                board[row][col] = 'Q';
+                solve(board, row + 1, n);
+                board[row][col] = '.';
+            }
+        }
+    }
+
+    static void printBoard(char[][] board, int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(board[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        int n = 4;
+        char[][] board = new char[n][n];
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++) {
+                board[i][j] = '.';
+            }
+        System.out.println(); // ✅ newline added
+        solve(board, 0, n);
+    }
+}
