@@ -1,4 +1,4 @@
-package com.advanced.dsa.dataStructures.nonLinear.heaps.graphs.traversal;
+package com.advanced.dsa.dataStructures.nonLinear.graphs.traversal;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

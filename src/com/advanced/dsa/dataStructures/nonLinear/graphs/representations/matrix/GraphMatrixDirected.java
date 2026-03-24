@@ -1,8 +1,8 @@
-package com.advanced.dsa.dataStructures.nonLinear.heaps.graphs.representations.matrix;
+package com.advanced.dsa.dataStructures.nonLinear.graphs.representations.matrix;
 
 import java.util.Scanner;
 
-public class GraphMatrixUndirected {
+public class GraphMatrixDirected {
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         // n -> number of nodes
@@ -11,7 +11,7 @@ public class GraphMatrixUndirected {
         // Time Complexity = BigO(n)
         int n = sc.nextInt();
         int m = sc.nextInt();
-        // Undirected graph u <----> v
+        // directed graph u ----> v
         // For 0-based index it is better to take n+1 , n+1
         int[][] adjacencyMatrix = new int[n+1][n+1];
         // Take the input of the edges from the user
@@ -19,7 +19,6 @@ public class GraphMatrixUndirected {
             int u  = sc.nextInt();
             int v = sc.nextInt();
             adjacencyMatrix[u][v]=1;
-            adjacencyMatrix[v][u]=1;//Unidirected Graph
         }
         // Print the adjacency matrix
         for( int i =1; i<=n; i++){

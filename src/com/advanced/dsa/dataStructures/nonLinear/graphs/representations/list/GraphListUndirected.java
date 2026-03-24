@@ -1,10 +1,10 @@
-package com.advanced.dsa.dataStructures.nonLinear.heaps.graphs.representations.list;
+package com.advanced.dsa.dataStructures.nonLinear.graphs.representations.list;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class GraphListDirected {
+public class GraphListUndirected {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         // n -> number of nodes
@@ -20,11 +20,12 @@ public class GraphListDirected {
             adjacencyList.add(new ArrayList<>());
         }
         // Read/input the edges from the user
-        for (int i =0; i<m; i++){
+        for (int i =0; i<=m; i++){
             int u = sc.nextInt();
             int v = sc.nextInt();
-            // directed Graph u --> v
+            // Undirected Graph u <---> v
             adjacencyList.get(u).add(v);
+            adjacencyList.get(v).add(u);// Only for undirected
         }
         // Print the Adjacency List
         for (int i =1; i<=n; i++){
